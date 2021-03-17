@@ -92,10 +92,10 @@ const HomeScreen = () => {
           <div className="container">
             <div className="row">
               <div className="col-7">
-                <h1 class="display-5">Fluid jumbotron</h1>
+                <h1 className="display-5">Fluid jumbotron</h1>
               </div>
               <div className="col-5">
-                <p class="lead">
+                <p className="lead">
                   This is a modified jumbotron that occupies the entire
                   horizontal space of its parent.
                 </p>
