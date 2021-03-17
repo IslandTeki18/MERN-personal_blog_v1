@@ -2,8 +2,8 @@ import mongoose, { Schema } from "mongoose";
 
 const PostSchema = mongoose.Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
@@ -32,19 +32,19 @@ const PostSchema = mongoose.Schema(
     },
     postComments: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Comment",
       },
     ],
     postTags: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Tag",
       },
     ],
     postCategories: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
       },
     ],
