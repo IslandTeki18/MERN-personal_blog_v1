@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 // import routes here
+import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/blogRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -11,6 +13,8 @@ app.use(express.json());
 connectDB();
 
 // app.use routes
+app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
