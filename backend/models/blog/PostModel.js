@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const PostSchema = mongoose.Schema(
   {
@@ -11,6 +11,9 @@ const PostSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    postImage: {
+      type: String,
+    },
     summary: {
       type: String,
     },
@@ -22,12 +25,13 @@ const PostSchema = mongoose.Schema(
       default: false,
       required: true,
     },
-    descripion: {
+    content: {
       type: String,
       required: true,
     },
     publishedAt: {
-      type: Date.now,
+      type: Date,
+      default: Date.now,
       required: true,
     },
     postComments: [

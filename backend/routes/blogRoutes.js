@@ -1,5 +1,5 @@
 import express from "express"
-import router  from express.Router()
+const router = express.Router()
 import { getAllPost, getPostById, postNewPost } from "../controllers/blogController.js";
 import { admin, protect } from "../middleware/authMiddleware.js";
 

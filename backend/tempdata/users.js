@@ -2,13 +2,13 @@ import bcrypt from "bcryptjs";
 
 const users = [
   {
-    username: "admin",
+    firstName: "Landon",
+    lastName: "McKell",
+    email: "landon.roney7923@gmail.com",
     password: bcrypt.hashSync("123456", 10),
+    bio: "I am software engineer learning technology and how to leverage it.",
+    post: [],
     isAdmin: true,
-  },
-  {
-    username: "johndoe",
-    password: bcrypt.hashSync("123456", 10),
   },
 ];
 

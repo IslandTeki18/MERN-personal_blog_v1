@@ -14,9 +14,9 @@ import {
 export const postListReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
     case POST_LIST_REQUEST:
-      return { loading: true, products: [] };
+      return { loading: true, posts: [] };
     case POST_LIST_SUCCESS:
-      return { loading: false, products: action.payload };
+      return { loading: false, posts: action.payload };
     case POST_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:

@@ -1,10 +1,14 @@
 /* Home Screen - Start */
 
-.desc-truncate{
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+.desc-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+main {
+  min-height: 95vh;
 }
 
 /* Home Screen - End */
