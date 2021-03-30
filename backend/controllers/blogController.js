@@ -13,7 +13,7 @@ const getAllPost = asyncHandler(async (req, res) => {
 //@route    GET /api/posts/:id
 //@access   Public
 const getPostById = asyncHandler(async (req, res) => {
-  const post = await Post.findById(req.param.id);
+  const post = await Post.findById(req.params.id);
   if (post) {
     return res.json(post);
   } else {

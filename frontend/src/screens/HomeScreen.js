@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { listPosts } from "../actions/postActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -12,6 +13,7 @@ const HomeScreen = () => {
   const { loading, error, posts } = postList;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(listPosts());
   }, [dispatch]);
 
@@ -24,7 +26,7 @@ const HomeScreen = () => {
             <h1 className="display-4">Island Teki Blog</h1>
             <p className="lead">
               Teki in Samoan means "tech". Here you'll be able to read simple
-              blog posts about what landon is using and learning. If you're a
+              blog posts about what Landon is using and learning. If you're a
               software or hardware engineer, having a blog is very beneficial
               for your learning process.
             </p>
@@ -43,11 +45,13 @@ const HomeScreen = () => {
               {posts.map((post) => (
                 <div className="col-4">
                   <div className="card">
-                    <img
-                      src={post.postImage}
-                      className="card-img-top"
-                      alt="postimage"
-                    />
+                    <Link to={`/post/${post._id}`}>
+                      <img
+                        src={post.postImage}
+                        className="card-img-top"
+                        alt="postimage"
+                      />
+                    </Link>
                     <div className="card-body">
                       <h5 className="card-title">{post.title}</h5>
                       <p className="card-text">
@@ -74,7 +78,7 @@ const HomeScreen = () => {
               </div>
               <div className="col-5">
                 <p className="lead">
-                  This is my onmine journal of my findings and learning anything
+                  This is my online journal of my findings and learning anything
                   and everything technology.
                 </p>
               </div>
