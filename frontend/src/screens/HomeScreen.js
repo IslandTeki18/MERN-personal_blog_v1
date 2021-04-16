@@ -4,7 +4,7 @@ import { listPosts } from "../actions/postActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { useEffect } from "react";
-import moment from "moment";
+import PostCard from "../components/PostCard";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -17,20 +17,46 @@ const HomeScreen = () => {
         dispatch(listPosts());
     }, [dispatch]);
 
+    const renderPosts = () => {
+        return (
+            <>
+                {posts.map((post) => (
+                    <PostCard
+                        id={post._id}
+                        title={post.title}
+                        image={post.postImage}
+                        createdAt={post.createdAt}
+                        summary={post.summary}
+                    />
+                ))}
+            </>
+        );
+    };
+
     return (
         <>
             {/* Hero Section */}
-            <section id="home-hero-section">
-                <div className="jumbotron jumbotron-fluid">
-                    <div className="container">
-                        <h1 className="display-4">Island Teki Blog</h1>
-                        <p className="lead">
-                            Teki in Samoan means "tech". Here you'll be able to
-                            read simple blog posts about what Landon is using
-                            and learning. If you're a software or hardware
-                            engineer, having a blog is very beneficial for your
-                            learning process.
-                        </p>
+            <section className="pb-5" id="home-hero-section">
+                <div className="container-fluid no-padding">
+                    <div className="row no-gutters">
+                        <div className="col-xs-12 col-sm-6 col-md-6">
+                            <div className="img-left title-center">
+                                <h1>
+                                    <a href="/bloglist" className="title">
+                                        blog
+                                    </a>
+                                </h1>
+                            </div>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 col-md-6">
+                            <div className="img-right title-center">
+                                <h1>
+                                    <a href="/fitnesslist" className="title">
+                                        fitness
+                                    </a>
+                                </h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -41,63 +67,18 @@ const HomeScreen = () => {
                 <Message variant="danger">{error}</Message>
             ) : (
                 <section id="home-blog-list-section">
-                    <div className="container-fluid py-4">
+                    <div className="container py-4">
+                        <div className="text-center pb-3">
+                            <h3>My Latest Posts</h3>
+                        </div>
                         <div className="row">
-                            {posts.map((post) => (
-                                <div className="col-4">
-                                    <div className="card">
-                                        <Link to={`/post/${post._id}`}>
-                                            <img
-                                                src={post.postImage}
-                                                className="card-img-top"
-                                                alt="postimage"
-                                            />
-                                        </Link>
-                                        <div className="card-body">
-                                            <Link to={`/post/${post._id}`}>
-                                                <h5 className="card-title">
-                                                    {post.title}
-                                                </h5>
-                                            </Link>
-                                            <p className="card-text">
-                                                <small className="text-muted">
-                                                    Created{" "}
-                                                    {moment(
-                                                        post.createdAt
-                                                    ).calendar()}
-                                                </small>
-                                            </p>
-                                            <p className="card-text desc-truncate">
-                                                {post.summary}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                            <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                {renderPosts()}
+                            </div>
                         </div>
                     </div>
                 </section>
             )}
-            {/* Info Section */}
-            <section id="home-info-section">
-                <div className="jumbotron jumbotron-fluid">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-7">
-                                <h1 className="display-5">
-                                    What this blog is about...
-                                </h1>
-                            </div>
-                            <div className="col-5">
-                                <p className="lead">
-                                    This is my online journal of my findings and
-                                    learning anything and everything technology.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </>
     );
 };

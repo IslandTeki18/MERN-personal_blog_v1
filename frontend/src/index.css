@@ -1,14 +1,55 @@
 /* Home Screen - Start */
 
 .desc-truncate {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 main {
-  min-height: 95vh;
+    min-height: 95vh;
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+h1 a:hover {
+    color: #e6a676;
+    text-decoration: none;
+}
+
+.title-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 80px;
+    font-family: sans-serif;
+}
+
+.img-left {
+    background: linear-gradient(rgba(0, 0, 0, 0.238), rgba(0, 0, 0, 0.7)),
+        url("./images/PortfolioPicture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 650px;
+}
+
+.img-right {
+    background: linear-gradient(rgba(0, 0, 0, 0.238), rgba(0, 0, 0, 0.7)),
+        url("./images/gym-equipment.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 650px;
 }
 
 /* Home Screen - End */

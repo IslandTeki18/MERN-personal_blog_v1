@@ -29,34 +29,15 @@ const Header = () => {
                                 Home
                             </Link>
                         </li>
-                        <li className="nav-item dropdown">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="!#"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                Category
-                            </a>
-                            <div
-                                className="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                <a className="dropdown-item disabled" href="#">
-                                    MERN Stack
-                                </a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item disabled" href="#">
-                                    Learning
-                                </a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item disabled" href="#">
-                                    Other
-                                </a>
-                            </div>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">
+                                Blog
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">
+                                Fitness
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/contact">

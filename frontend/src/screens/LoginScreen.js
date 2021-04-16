@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginScreen = () => {
 
@@ -7,12 +8,13 @@ const LoginScreen = () => {
     }
   return (
     <>
-      <div className="containter">
+      <div className="containter my-5">
         <div className="row">
           <div className="col-md-6 offset-md-3">
+            <h2 className="text-center mb-5">Sign In</h2>
             <form onSubmit={submitHandler}>
               <div className="form-group">
-                <label htmlFor="emailInput">Email address</label>
+                <label htmlFor="emailInput">Email Address</label>
                 <input
                   type="email"
                   className="form-control"
@@ -32,6 +34,7 @@ const LoginScreen = () => {
                 Submit
               </button>
             </form>
+            <p className="mt-3">Don't have an account? <Link to="/registration">Sign up</Link> here!</p>
           </div>
         </div>
       </div>
