@@ -16,6 +16,7 @@ const PostDetailsScreen = ({ match }) => {
     window.scrollTo(0, 0);
     dispatch(detailPost(postID));
   }, [dispatch, postID]);
+  
   return (
     <div className="container">
       {loading ? (
@@ -29,7 +30,7 @@ const PostDetailsScreen = ({ match }) => {
             <div className="container">
               <div className="row">
                 <div className="col-md-8 offset-md-3">
-                  <h2>{post.title}</h2>
+                  <h2>{post.title}</h2>npm run
                 </div>
               </div>
             </div>
@@ -40,7 +41,7 @@ const PostDetailsScreen = ({ match }) => {
               <div className="row">
                 <div className="col-md-8 offset-md-3">
                   <img
-                    class="img-fluid"
+                    className="img-fluid"
                     src="http://placehold.it/500x300"
                     alt=""
                   />
