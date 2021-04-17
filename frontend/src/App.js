@@ -8,22 +8,24 @@ import LoginScreen from "./screens/LoginScreen";
 import PostListScreen from "./screens/PostListScreen";
 import AdminPostListScreen from "./screens/AdminPostListScreen";
 import AdminPostEditScreen from "./screens/AdminPostEditScreen";
+import AdminDashBoardScreen from "./screens/AdminDashBoardScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 
 function App() {
-  return (
-    <Router>
-      <Header />
-      <main>
-        <Route exact path="/" component={HomeScreen} />
-        <Route path="/post/:id" component={PostDetailsScreen} />
-        <Route path="/contact" component={ContactScreen} />
-        <Route path="/login" component={LoginScreen} />
-        <Route path="/registration" component={RegistrationScreen} />
-      </main>
-      <Footer />
-    </Router>
-  );
+    return (
+        <Router>
+            <Header />
+            <main>
+                <Route exact path="/" component={HomeScreen} />
+                <Route path="/post/:id" component={PostDetailsScreen} />
+                <Route path="/contact" component={ContactScreen} />
+                <Route path="/login" component={LoginScreen} />
+                <Route path="/registration" component={RegistrationScreen} />
+                <Route path="/admin/" component={AdminDashBoardScreen} />
+            </main>
+            <Footer />
+        </Router>
+    );
 }
 
 export default App;
