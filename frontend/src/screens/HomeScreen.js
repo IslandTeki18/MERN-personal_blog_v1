@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { listPosts } from "../actions/postActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { useEffect } from "react";
 import PostCard from "../components/PostCard";
+import FitnessCard from "../components/FitnessCard";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const HomeScreen = () => {
         dispatch(listPosts());
     }, [dispatch]);
 
-    const renderPosts = () => {
+    const renderBlogPosts = () => {
         return (
             <>
                 {posts.map((post) => (
@@ -28,9 +28,13 @@ const HomeScreen = () => {
                         createdAt={post.createdAt}
                         summary={post.summary}
                     />
-                ))}
+                )).slice(0, 3)}
             </>
         );
+    };
+
+    const renderFItnessPosts = () => {
+        return <h1>Nothing here yet...</h1>;
     };
 
     return (
@@ -73,12 +77,25 @@ const HomeScreen = () => {
                         </div>
                         <div className="row">
                             <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                {renderPosts()}
+                                {renderBlogPosts()}
                             </div>
                         </div>
                     </div>
                 </section>
             )}
+            <hr />
+            <section id="home-fitness-list-section">
+                <div className="container py-4">
+                    <div className="text-center pb-3">
+                        <h3>My Fitness Journey</h3>
+                    </div>
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            {renderFItnessPosts()}
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
