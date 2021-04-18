@@ -46,7 +46,7 @@ const HomeScreen = () => {
                         <div className="col-xs-12 col-sm-6 col-md-6">
                             <div className="img-left title-center">
                                 <h1>
-                                    <a href="/bloglist" className="title">
+                                    <a href="/blog-list" className="title">
                                         blog
                                     </a>
                                 </h1>
@@ -55,7 +55,7 @@ const HomeScreen = () => {
                         <div className="col-xs-12 col-sm-6 col-md-6">
                             <div className="img-right title-center">
                                 <h1>
-                                    <a href="/fitnesslist" className="title">
+                                    <a href="/fitness-list" className="title">
                                         fitness
                                     </a>
                                 </h1>
