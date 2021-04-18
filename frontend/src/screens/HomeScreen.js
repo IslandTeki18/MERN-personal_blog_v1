@@ -20,21 +20,38 @@ const HomeScreen = () => {
     const renderBlogPosts = () => {
         return (
             <>
-                {posts.map((post) => (
-                    <PostCard
-                        id={post._id}
-                        title={post.title}
-                        image={post.postImage}
-                        createdAt={post.createdAt}
-                        summary={post.summary}
-                    />
-                )).slice(0, 3)}
+                {posts
+                    .map((post) => (
+                        <PostCard
+                            id={post._id}
+                            title={post.title}
+                            image={post.postImage}
+                            createdAt={post.createdAt}
+                            summary={post.summary}
+                        />
+                    ))
+                    .slice(0, 3)}
             </>
         );
     };
 
     const renderFItnessPosts = () => {
-        return <h1>Nothing here yet...</h1>;
+        const mockCards = [
+            <PostCard />,
+            <PostCard />,
+            <PostCard />,
+            <PostCard />,
+            <PostCard />,
+        ];
+        return (
+            <>
+                {mockCards.map((post) => (
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4 py-3">
+                        {post}
+                    </div>
+                ))}
+            </>
+        );
     };
 
     return (
@@ -89,11 +106,7 @@ const HomeScreen = () => {
                     <div className="text-center pb-3">
                         <h3>My Fitness Journey</h3>
                     </div>
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                            {renderFItnessPosts()}
-                        </div>
-                    </div>
+                    <div className="row">{renderFItnessPosts()}</div>
                 </div>
             </section>
         </>
