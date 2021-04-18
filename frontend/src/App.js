@@ -6,9 +6,7 @@ import PostDetailsScreen from "./screens/PostDetailsScreen";
 import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from "./screens/LoginScreen";
 import PostListScreen from "./screens/PostListScreen";
-import AdminPostListScreen from "./screens/AdminPostListScreen";
-import AdminPostEditScreen from "./screens/AdminPostEditScreen";
-import AdminDashBoardScreen from "./screens/AdminDashBoardScreen";
+import AdminDashBoardScreen from "./screens/admin/AdminPanelScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 
 function App() {
