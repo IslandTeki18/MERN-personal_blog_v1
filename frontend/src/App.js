@@ -7,7 +7,6 @@ import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from "./screens/LoginScreen";
 import BlogPostListScreen from "./screens/BlogPostListScreen";
 import FitnessPostListScreen from "./screens/FitnessPostListScreen";
-import AdminDashBoardScreen from "./screens/admin/AdminPanelScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
                 <Route path="/registration" component={RegistrationScreen} />
                 <Route path="/fitness-list" component={FitnessPostListScreen} />
                 <Route path="/blog-list" component={BlogPostListScreen} />
-                <Route path="/admin/" component={AdminDashBoardScreen} />
             </main>
             <Footer />
         </Router>
