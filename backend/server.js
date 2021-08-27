@@ -5,7 +5,7 @@ import connectDB from "./config/db.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 // import routes here
 import userRoutes from "./routes/userRoutes.js";
-import postRoutes from "./routes/blogRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
 
 dotenv.config();
 const app = express();

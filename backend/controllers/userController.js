@@ -2,10 +2,10 @@ import asyncHandler from "express-async-handler";
 import User from "../models/user/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
-//@desc     Login in auth user
+//@desc     Login auth user
 //@route    GET /api/users/login
 //@access   Public
-const getLoggedInUser = asyncHandler(async (req, res) => {
+const getAuthUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
 
@@ -76,4 +76,4 @@ const putUpdateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-export { putUpdateUserProfile, getLoggedInUser, getUserProfile };
+export { putUpdateUserProfile, getAuthUser, getUserProfile };
