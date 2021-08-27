@@ -19,8 +19,8 @@ const Header = ({ history }) => {
                 <button
                     className="navbar-toggler"
                     type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
@@ -54,14 +54,24 @@ const Header = ({ history }) => {
                             </Link>
                         </li>
                         {userInfo ? (
-                            <li className="nav-item">
-                                <button
-                                    className="btn nav-link"
-                                    onClick={logout}
-                                >
-                                    Logout
-                                </button>
-                            </li>
+                            <>
+                                <li className="nav-item">
+                                    <Link
+                                        className="nav-link"
+                                        to="/blog-management"
+                                    >
+                                        Blog Management
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <button
+                                        className="btn nav-link"
+                                        onClick={logout}
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
                         ) : (
                             <li className="nav-item">
                                 <Link className="nav-link" to="/login">

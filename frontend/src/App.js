@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./app/Header";
 import Footer from "./app/Footer";
-import HomeScreen from "./screens/HomeScreen";
+import HomeScreen from "./screens/homeScreen/HomeScreen";
 import PostDetailsScreen from "./screens/PostDetailsScreen";
 import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from "./screens/LoginScreen";
 import BlogPostListScreen from "./screens/BlogPostListScreen";
 import FitnessPostListScreen from "./screens/FitnessPostListScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
+import BlogManagementScreen from "./screens/blogManagementScreen/BlogManagementScreen";
 
 function App() {
     return (
@@ -21,6 +22,10 @@ function App() {
                 <Route path="/registration" component={RegistrationScreen} />
                 <Route path="/fitness-list" component={FitnessPostListScreen} />
                 <Route path="/blog-list" component={BlogPostListScreen} />
+                <Route
+                    path="/blog-management"
+                    component={BlogManagementScreen}
+                />
             </main>
             <Footer />
         </Router>

@@ -1,0 +1,17 @@
+.dkHomeScreen {
+    h1 a:hover {
+        color: #e6a676;
+        text-decoration: none;
+    }
+
+    
+
+    
+
+    .desc-truncate {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}

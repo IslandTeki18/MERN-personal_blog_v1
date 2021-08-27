@@ -1,0 +1,15 @@
+.dkAdminLeftSideMenu {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    .sidebar-wrapper {
+        width: 280px;
+    }
+    .sidebar-icon {
+        font-size: 20px;
+    }
+}

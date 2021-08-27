@@ -1,0 +1,29 @@
+.dkSplitHeroSection {
+    .img-left {
+        background: linear-gradient(rgba(0, 0, 0, 0.238), rgba(0, 0, 0, 0.7)),
+            url("../../../images/PortfolioPicture.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 650px;
+    }
+    .img-right {
+        background: linear-gradient(rgba(0, 0, 0, 0.238), rgba(0, 0, 0, 0.7)),
+            url("../../../images/gym-equipment.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 650px;
+    }
+    .title-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title {
+        color: white;
+        font-size: 80px;
+        font-family: sans-serif;
+    }
+}
