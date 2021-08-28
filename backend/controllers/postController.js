@@ -32,7 +32,7 @@ const getPostById = asyncHandler(async (req, res) => {
 //@desc     Creat a post
 //@route    POST /api/posts
 //@access   Private/Admin
-const postNewPost = asyncHandler(async (req, res) => {
+const postNewPost = await asyncHandler(async (req, res) => {
     try {
         const post = new Post({
             author: req.user._id,
@@ -62,7 +62,7 @@ const postNewPost = asyncHandler(async (req, res) => {
 //@access   Private/Admin
 const deletePost = asyncHandler(async (req, res) => {
     try {
-        const post = Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id);
         if (!post) {
             return res.status(404).send({ msg: "Uh oh! Post not found" });
         }
@@ -90,21 +90,24 @@ const updatePostById = asyncHandler(async (req, res) => {
             updatedAt,
             published,
         } = req.body;
-        const post = Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id);
         if (!post) return res.status(404).send({ msg: "No Post Found!" });
         if (post) {
-          post.title = title;
-          post.summary = summary;
-          post.tldr = tldr;
-          post.content = content;
-          post.postImage = postImage;
-          post.updatedAt = updatedAt;
-          post.published = published;
+            post.title = title;
+            post.summary = summary;
+            post.tldr = tldr;
+            post.content = content;
+            post.postImage = postImage;
+            post.updatedAt = updatedAt;
+            post.published = published;
         }
-        const updatedProject = post.updateOne()
-        res.json(updatedProject)
+        const updatedPost = await post.save();
+        res.json(updatedPost);
     } catch (error) {
-      res.status(500).send({msg: "Failed to Update Post", error: `${error}`})
+        res.status(500).send({
+            msg: "Failed to Update Post",
+            error: `${error}`,
+        });
     }
 });
 
