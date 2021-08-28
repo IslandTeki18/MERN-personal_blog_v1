@@ -7,6 +7,7 @@ import {
     deletePost,
     updatePostById,
     postCommentOnPost,
+    deleteCommentOnPost,
 } from "../controllers/postController.js";
 import { admin, protect } from "../middleware/authMiddleware.js";
 
@@ -17,5 +18,6 @@ router
     .delete(protect, admin, deletePost)
     .put(protect, admin, updatePostById);
 router.route("/:id/comment").post(protect, postCommentOnPost);
+router.route("/:id/:comment_id").delete(protect, deleteCommentOnPost);
 
 export default router;

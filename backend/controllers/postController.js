@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import Post from "../models/post/PostModel.js";
+import Post from "../models/post/postModel.js";
 
 //@desc     Get all posts
 //@route    GET /api/posts
@@ -135,6 +135,21 @@ const postCommentOnPost = asyncHandler(async (req, res) => {
 //@desc     Delete post comment by ID
 //@route    DELETE /api/posts/:id/:comment_id
 //@access   Private
+const deleteCommentOnPost = asyncHandler(async (req, res) => {
+    const post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).send({ msg: "Post Not Found" });
+    if (post) {
+        const newArr = await post.postComment.filter(
+            (comment) => comment.id.toString() !== req.params.comment_id
+        );
+        post.postComments = newArr;
+        await post.save();
+        return res.json({ msg: "Comment Removed." });
+    } else {
+        res.status(500);
+        throw new Error("Could not delete comment");
+    }
+});
 
 //@desc     Update post comment by ID
 //@route    PUT /api/posts/:id/:comment_id
@@ -147,4 +162,5 @@ export {
     deletePost,
     updatePostById,
     postCommentOnPost,
+    deleteCommentOnPost,
 };
