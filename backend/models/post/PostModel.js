@@ -1,61 +1,109 @@
 import mongoose from "mongoose";
 
-const PostSchema = mongoose.Schema(
-  {
-    author: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
+const CommentSchema = mongoose.Schema(
+    {
+        postId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Post",
+            required: true,
+        },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        comment: {
+            type: String,
+            required: true,
+        },
     },
+    {
+        timestamps: true,
+    }
+);
+
+const TagSchema = mongoose.Schema({
     title: {
-      type: String,
-      required: true,
-    },
-    postImage: {
-      type: String,
-    },
-    summary: {
-      type: String,
-    },
-    tldr: {
-      type: String,
-    },
-    published: {
-      type: Boolean,
-      default: false,
-      required: true,
+        type: String,
+        required: true,
+        default: false,
     },
     content: {
-      type: String,
-      required: true,
+        type: String,
+        required: true,
     },
-    publishedAt: {
-      type: Date,
-      default: Date.now,
-      required: true,
+});
+
+const CategorySchema = mongoose.Schema({
+    postId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post",
+        required: true,
     },
-    postComments: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Comment",
-      },
-    ],
-    postTags: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Tag",
-      },
-    ],
-    postCategories: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-      },
-    ],
-  },
-  {
-    timestamps: true,
-  }
+    title: {
+        type: String,
+        required: true,
+    },
+    content: {
+        type: String,
+        required: true,
+    },
+    published: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const PostSchema = mongoose.Schema(
+    {
+        author: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: "User",
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        postImage: {
+            type: String,
+        },
+        summary: {
+            type: String,
+        },
+        tldr: {
+            type: String,
+        },
+        published: {
+            type: Boolean,
+            default: false,
+            required: true,
+        },
+        content: {
+            type: String,
+            required: true,
+        },
+        publishedAt: {
+            type: Date,
+            default: Date.now,
+            required: true,
+        },
+        thumbsUp: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
+        postComments: [CommentSchema],
+        postTags: [TagSchema],
+        postCategories: [CategorySchema],
+    },
+    {
+        timestamps: true,
+    }
 );
 
 const Post = mongoose.model("Post", PostSchema);

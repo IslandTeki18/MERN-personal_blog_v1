@@ -1,5 +1,4 @@
 import asyncHandler from "express-async-handler";
-import { protect } from "../middleware/authMiddleware.js";
 import Post from "../models/post/PostModel.js";
 
 //@desc     Get all posts
@@ -112,8 +111,26 @@ const updatePostById = asyncHandler(async (req, res) => {
 });
 
 //@desc     Create post comment
-//@route    POST /api/posts/:id
-//@access   Public
+//@route    POST /api/posts/:id/comment
+//@access   Private
+const postCommentOnPost = asyncHandler(async (req, res) => {
+    const { title, comment } = req.body;
+    const post = await Post.findById(req.params.id);
+    if (post) {
+        const newComment = {
+            postId: post._id,
+            user: req.user,
+            title: title,
+            comment: comment,
+        };
+        post.postComments.push(newComment);
+        await post.save();
+        res.status(200).json({ msg: "Comment Added." });
+    } else {
+        res.status(500);
+        throw new Error("Failed to comment on post");
+    }
+});
 
 //@desc     Delete post comment by ID
 //@route    DELETE /api/posts/:id/:comment_id
@@ -123,4 +140,11 @@ const updatePostById = asyncHandler(async (req, res) => {
 //@route    PUT /api/posts/:id/:comment_id
 //@access   Public
 
-export { getAllPost, getPostById, postNewPost, deletePost, updatePostById };
+export {
+    getAllPost,
+    getPostById,
+    postNewPost,
+    deletePost,
+    updatePostById,
+    postCommentOnPost,
+};
