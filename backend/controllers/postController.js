@@ -137,14 +137,14 @@ const postCommentOnPost = asyncHandler(async (req, res) => {
 //@access   Private
 const deleteCommentOnPost = asyncHandler(async (req, res) => {
     const post = await Post.findById(req.params.id);
-    if (!post) return res.status(404).send({ msg: "Post Not Found" });
     if (post) {
-        const newArr = await post.postComment.filter(
-            (comment) => comment.id.toString() !== req.params.comment_id
+        const newArr = post.postComments.filter(
+            (comment) =>
+                req.params.comment_id.toString() !== comment.id.toString()
         );
         post.postComments = newArr;
         await post.save();
-        return res.json({ msg: "Comment Removed." });
+        res.json({ msg: "Comment Removed." });
     } else {
         res.status(500);
         throw new Error("Could not delete comment");
