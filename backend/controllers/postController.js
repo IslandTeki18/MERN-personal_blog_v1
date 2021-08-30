@@ -134,7 +134,7 @@ const postCommentOnPost = asyncHandler(async (req, res) => {
 
 //@desc     Delete post comment by ID
 //@route    DELETE /api/posts/:id/:comment_id
-//@access   Private
+//@access   Private / Admin
 const deleteCommentOnPost = asyncHandler(async (req, res) => {
     const post = await Post.findById(req.params.id);
     if (post) {
