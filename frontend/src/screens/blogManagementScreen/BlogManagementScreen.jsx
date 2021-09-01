@@ -4,8 +4,9 @@ import './BlogManagementScreen.scss'
 
 const BlogManagementScreen = () => {
     return (
-        <div className='dkBlogManagementScreen'>
+        <div className='dkBlogManagementScreen container-fluid'>
             <AdminLeftSideMenu />
+            
         </div>
     );
 };

@@ -12,7 +12,7 @@ const Header = ({ history }) => {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
                 <a className="navbar-brand" href="/">
                     Island Teki Blog
                 </a>
@@ -64,12 +64,9 @@ const Header = ({ history }) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <button
-                                        className="btn nav-link"
-                                        onClick={logout}
-                                    >
+                                    <div className="nav-link" onClick={logout}>
                                         Logout
-                                    </button>
+                                    </div>
                                 </li>
                             </>
                         ) : (
