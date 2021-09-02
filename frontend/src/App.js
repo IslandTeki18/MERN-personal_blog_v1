@@ -8,7 +8,6 @@ import LoginScreen from "./screens/LoginScreen";
 import BlogPostListScreen from "./screens/BlogPostListScreen";
 import FitnessPostListScreen from "./screens/FitnessPostListScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
-import BlogManagementScreen from "./screens/blogManagementScreen/BlogManagementScreen";
 
 function App() {
     return (
@@ -22,10 +21,6 @@ function App() {
                 <Route path="/registration" component={RegistrationScreen} />
                 <Route path="/fitness-list" component={FitnessPostListScreen} />
                 <Route path="/blog-list" component={BlogPostListScreen} />
-                <Route
-                    path="/blog-management"
-                    component={BlogManagementScreen}
-                />
             </main>
             <Footer />
         </Router>

@@ -56,14 +56,6 @@ const Header = ({ history }) => {
                         {userInfo ? (
                             <>
                                 <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to="/blog-management"
-                                    >
-                                        Blog Management
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
                                     <div className="nav-link" onClick={logout}>
                                         Logout
                                     </div>
