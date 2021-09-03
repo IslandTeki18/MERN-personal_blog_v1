@@ -1,8 +1,9 @@
 import React from "react";
-import HeroBanner from "../components/HeroBanner";
-import PostCard from "../components/PostCard";
+import HeroBanner from "../../components/HeroBanner";
+import PostCard from "../../components/PostCard";
+import "./FitnessPostListScreen.scss";
 
-const BlogPostListScreen = () => {
+const FitnessPostListScreen = () => {
     const renderPostListCards = () => {
         const mockCards = [
             <PostCard />,
@@ -23,7 +24,7 @@ const BlogPostListScreen = () => {
     };
     return (
         <div className="blogPostListScreen">
-            <HeroBanner title="My Blog" />
+            <HeroBanner title="My Fitness Blog" />
             <section className="py-5" id="post-list-section">
                 <div className="container">
                     <div className="row">{renderPostListCards()}</div>
@@ -33,4 +34,4 @@ const BlogPostListScreen = () => {
     );
 };
 
-export default BlogPostListScreen;
+export default FitnessPostListScreen;

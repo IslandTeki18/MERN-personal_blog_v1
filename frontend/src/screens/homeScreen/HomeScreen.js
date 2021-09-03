@@ -5,16 +5,14 @@ import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 import { useEffect } from "react";
 import PostCard from "../../components/PostCard";
-import FitnessCard from "../../components/FitnessCard";
 import SplitHeroSection from "./sections/splitHeroSection/SplitHeroSection";
 import LatestPostSection from "./sections/latestPostsSection/LatestPostSection";
 import FitnessPostsSection from "./sections/fitnessPostsSection/FitnessPostsSection";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
-
     const postList = useSelector((state) => state.postList);
-    const { loading, error, posts } = postList;
+    const { loading, error } = postList;
 
     let mockCards = [
         <PostCard />,
