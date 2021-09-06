@@ -6,6 +6,7 @@ import PostDetailsScreen from "./screens/postDetailsScreen/PostDetailsScreen";
 import ContactScreen from "./screens/contactScreen/ContactScreen";
 import BlogPostListScreen from "./screens/blogPostListScreen/BlogPostListScreen";
 import FitnessPostListScreen from "./screens/fitnessPostListScreen/FitnessPostListScreen";
+import AboutScreen from "./screens/aboutScreen/AboutScreen";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/contact" component={ContactScreen} />
                 <Route path="/fitness-list" component={FitnessPostListScreen} />
                 <Route path="/blog-list" component={BlogPostListScreen} />
+                <Route path="/about-me" component={AboutScreen} />
             </main>
             <Footer />
         </Router>

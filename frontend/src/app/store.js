@@ -6,10 +6,8 @@ import {
     postDetailsReducer,
     postListReducer,
 } from "../reducers/postReducers";
-import { userLoginReducer } from "../reducers/userReducers";
 
 const reducer = combineReducers({
-    userLogin: userLoginReducer,
     postList: postListReducer,
     postDetails: postDetailsReducer,
     postCreate: postCreateReducer,
