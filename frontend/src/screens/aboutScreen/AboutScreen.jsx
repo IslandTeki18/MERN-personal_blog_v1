@@ -3,7 +3,6 @@ import "./AboutScreen.scss";
 import HeaderSection from "./sections/headerSection/HeaderSection";
 import InfoIconSection from "./sections/infoIconSection/InfoIconSection";
 import AboutSection from "./sections/aboutSection/AboutSection";
-import Paragraph from "../../components/paragraph/Paragraph";
 
 const AboutScreen = () => {
     return (

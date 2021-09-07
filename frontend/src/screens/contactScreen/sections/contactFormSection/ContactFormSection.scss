@@ -1,0 +1,18 @@
+.dkContactFormSection {
+    height: 80vh;
+    background-color: #cccccc;
+
+    .contact-icon-wrapper {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: #1b1b1b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon-size {
+            font-size: 80px;
+        }
+    }
+}
