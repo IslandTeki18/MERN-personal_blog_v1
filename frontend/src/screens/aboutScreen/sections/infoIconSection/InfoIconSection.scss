@@ -1,0 +1,16 @@
+.dkInfoIconSection {
+    background-color: #cccccc;
+
+    .icon-row {
+        height: 20vh;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon-size {
+        font-size: 40px;
+    }
+}
